@@ -26,58 +26,41 @@
 # include <stdio.h>
 
 /** PART 1**/
-// memset
-// bzero
-// memcpy
-// memccpy
+
+// atoi		v
+// bzero	v
+// calloc	v	must use malloc	no idea if it's good
+// isalnum	v
+// isalpha	v
+// isascii	v
+// isdigit	v
+// isprint	v
+// memccpy	v	very uncertain about size and char exid condition
+// memchr	v
+// memcmp	v
+// memcpy	v
 // memmove
-// memchr
-// memcmp
-int		ft_strlen(char *str);				//TODO: check if it still conforms
-// strdup
-// strcpy
-// strncpy
-// strcat
-// strncat
-// strlcat
-// strchr
-// strrchr
-// strstr
-// strnstr
-int		ft_strcmp(char *s1, char *s2);		//TODO: check if it still conforms
-// strncmp
-// atoi
-// isalpha
-// isdigit
-// isalnum
-// isascii
-// isprint
-// toupper
-// tolower
+// memset
+// strchr	v
+// strdup	v	must use malloc
+// strlcat	v
+// strlcpy	v
+size_t	ft_strlen(char *str);				//TODO: check if it still conforms
+size_t	ft_strcmp(char *s1, char *s2);		//TODO: check if it still conforms
+// strnstr	v
+// strrchr	v
+// tolower	v
+// toupper	v
 
 /** PART 2 **/
-// memalloc
-// memdel
-// strnew
-// strdel
-// strcler
-// striter
-// striteri
-// strmap
-// strmapi
-// strequ
-// strnequ
-// strsub
+// substr
 // strjoin
 // strtrim
-// strsplit
+// split
 // itoa
-// putchar
-// putstr
-// putendl
-// putnbr
-void	ft_putchar(char c);				//TODO: check if it still conforms
-void	ft_putstr(char *str);			//TODO: check if it sitll conforms
+// strmapi
+// putchar_fd
+// putstr_fd
 // putendl_fd
 // putnbr_fd
 
@@ -85,15 +68,18 @@ void	ft_putstr(char *str);			//TODO: check if it sitll conforms
 typedef struct	s_list
 {
 void			*content;
-size_t			content_size;
+// size_t			content_size;
 struct s_list	*next;
 }				t_list;
 
-// lstnew
-// lstdelone
-// lstdel
-// lstadd
-// lstiter
-// lstmap
+// ft_lstnew
+// ft_lstadd_front
+// ft_lstsize
+// ft_lstlast
+// ft_lstadd_back
+// ft_lstdelone
+// ft_lstclear
+// ft_lstiter
+// ft_lstmap
 
 #endif

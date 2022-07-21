@@ -3,22 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marvin <znichola@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 13:55:06 by znichola          #+#    #+#             */
-/*   Updated: 2022/07/09 15:51:51 by marvin           ###   ########.fr       */
+/*   Updated: 2022/07/09 15:51:51 by znichola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+size_t	ft_strlen(const char *s)
 {	
-	int	i;
+	size_t	i;
 
 	i = 0;
-	while (*str != '\0')
-	{
-		str ++;
+	while (s[i] != '\0')
 		i++;
-	}
 	return (i);
 }
