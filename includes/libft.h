@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: znichola <znichola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/09 15:36:43 by marvin            #+#    #+#             */
-/*   Updated: 2022/07/09 15:36:43 by marvin           ###   ########.fr       */
+/*   Created: 2022/07/09 15:36:43 by znichola          #+#    #+#             */
+/*   Updated: 2022/07/09 15:36:43 by znichola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@
 // memchr	v
 // memcmp	v
 // memcpy	v
-// memmove
-// memset
+// memmove  v
+// memset   v
 // strchr	v
 // strdup	v	must use malloc
 // strlcat	v

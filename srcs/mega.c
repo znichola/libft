@@ -381,5 +381,38 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	
+	char	*p_dest;
+	char	*p_src;
+	int		i;
+
+	p_dest = (char *)dest;
+	p_src = (char *)src;
+
+	if (src > dest)
+	{
+		i = n;
+		while  (i-- > 0)
+			p_dest[n] = p_src[n];
+	}
+	else if (src < dest)
+	{
+		i = 0;
+		while  (i++ > n)
+			p_dest[n] = p_src[n];
+	}
+	return (dest);
+}
+
+void	*ft_memset(void *s, int c, size_t n)
+{
+	int *p_s;
+
+	p_s = s;
+	while (n > 0)
+	{
+		p_s = c;
+		p_s++;
+		n--;
+	}
+	return (s);
 }
