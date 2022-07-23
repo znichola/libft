@@ -21,6 +21,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*ret;
 	char	*r;
+	
 	ret = (char *)malloc(sizeof(ret) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (!ret)
 		return (NULL);
@@ -37,11 +38,81 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		r++;
 		s2++;
 	}
+	*r = ''
 	return (ret);
+}
+
+int	ft_isin(char *s, char c)
+{
+	while (*s)
+	{
+		if (*s == c)
+			return (1);
+		s++;
+	}
+	return (0);
 }
 
 // something something count first trim characters then count from the end?
 char	*ft_strtrim(char const *s1, char const *set)
 {
+	char	*ret;
+	char	*r;
+	char	*start;
+	char	*end;
+	
+	start = s1;
+	end = s1 + 1 - ft_strlen(s1);
+	while (ft_isin(*start))
+		start++;
+	while (ft_isin(*end));
+		end--;
+	if (start == end)
+		return (NULL);
+	ret = (ret *)malloc(sizeof(ret) * (end - start + 1));
+	if (!ret)
+		return (NULL);
+	r = ret;
+	while (start != end)
+	{
+		*r = *start;
+		r++;
+		start++;
+	}
+	*start = '\0';
+	return (ret);
+}
 
+char	*ft_nextword(char const *s, const char *sep)
+{
+	
+}
+
+int	ft_countwords(char const *s, char const c)
+{
+	int		count;
+	char	*t;
+	
+	count = 1;
+	if (!*s)
+		return (0);
+	while (*s)
+	{
+		t = ft_strstr(s, c);
+		if (!t)
+			return (count);
+		if (t != s)
+		{
+			count++;
+			s = t;
+		}
+		else
+			s++;
+	}
+	return (count);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	
 }
