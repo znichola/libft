@@ -3,7 +3,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*ret;
 	int		i;
 
-	ret = (char *)malloc(sizeof(ret) * (len + 1));
+	ret = (char *)malloc(sizeof(*ret) * (len + 1));
 	if (!ret)
 		return (NULL);
 	s += start;
@@ -22,7 +22,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*ret;
 	char	*r;
 	
-	ret = (char *)malloc(sizeof(ret) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	ret = (char *)malloc(sizeof(*ret) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (!ret)
 		return (NULL);
 	r = ret;
@@ -69,7 +69,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		end--;
 	if (start == end)
 		return (NULL);
-	ret = (ret *)malloc(sizeof(ret) * (end - start + 1));
+	ret = (char *)malloc(sizeof(*ret) * (end - start + 1));
 	if (!ret)
 		return (NULL);
 	r = ret;
@@ -83,9 +83,26 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (ret);
 }
 
-char	*ft_nextword(char const *s, const char *sep)
+char	*ft_nextword(char const **s, char const c)
 {
-	
+	char	*ret;
+	char	*t;
+
+	while (**s != c)
+		*s++;
+	t = *s;
+	while(*t != c)
+		t++;
+	ret = (char *)malloc(sizeof(*ret) * (t - *s + 1));
+	t = ret;
+	while(**s != c)
+	{
+		*t = **s;
+		*s++;
+		t++;
+	}
+	t = '\0';
+	return (ret);
 }
 
 int	ft_countwords(char const *s, char const c)
@@ -114,27 +131,71 @@ int	ft_countwords(char const *s, char const c)
 
 char	**ft_split(char const *s, char c)
 {
-	
+	char	**ret;
+	int		i;
+	int		word_count;
+
+	word_count = ft_countwords(s, c)
+	ret = (char **)malloc(sizeof(char*) * (word_count + 1));
+	if (!ret)
+		return (NULL);
+	i = 0;
+	while (i < word_count)
+	{
+		ret[i] = ft_nextword(&s, c);
+		i++;
+	}
+	ret[i] = NULL;
+	return (ret);
 }
 
-char static	*rec_itoa(int n, char *s)
+static char	*rec_itoa_old(int n, char *s)
 {
-	
+	if (n < 10)
+	{
+		*s = n + '0';
+		s++;
+		*s = '\0';
+	}
+	else
+	{
+		s = rec_itoa(n / 10, s);
+		*s = (n % 10) + '\0';
+		s++;
+		*s = '\0';
+	}
+	return (s);
+}
+
+static char	*rec_itoa(long n, char *s)
+{
+	if (n < 0)
+	{
+		n *= -1;
+		*s = '-';
+		s++;
+	}
+	if (n > 9)
+		s = rec_itoa(n / 10, s);
+	*s =  n % 10 + '\0';
+	s++;
+	*s = '0';
+	return (s);
 }
 
 char	*ft_itoa(int n)
 {
-	int	i;
-	int	s;
+	char	*s;
+	int		len;
 	
-	s = 1;
+	len = 1;
+	while (n / len * 10 == 0)
+		len++;
 	if (n < 0)
-	{
-		s = -1;
-		n *= -1;
-	}
-	i = 1;
-	while (n / i * 10 == 0)
-		i++;
-	
+		len++;
+	s = (char *)malloc(sizeof(char) * (len + 1));
+	if (!s)
+		return (NULL);
+	return (rec_itoa(n, s));
 }
+
