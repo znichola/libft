@@ -116,3 +116,25 @@ char	**ft_split(char const *s, char c)
 {
 	
 }
+
+char static	*rec_itoa(int n, char *s)
+{
+	
+}
+
+char	*ft_itoa(int n)
+{
+	int	i;
+	int	s;
+	
+	s = 1;
+	if (n < 0)
+	{
+		s = -1;
+		n *= -1;
+	}
+	i = 1;
+	while (n / i * 10 == 0)
+		i++;
+	
+}
