@@ -199,3 +199,63 @@ char	*ft_itoa(int n)
 	return (rec_itoa(n, s));
 }
 
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+{
+	char	*ret;
+	int		i;
+
+	ret = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
+	if (!ret)
+		return (NULL);
+	i = 0;
+	while (s[i])
+	{
+		ret[i] = f(i, s[i]);
+		i++;
+	}
+	ret[i] = '\0';
+	return (ret);
+}
+
+void	ft_putchar_fd(char c, int fd)
+{
+	write(fd, &c, 1);
+}
+
+void	ft_putstr_fd(char *s, int fd)
+{
+	while(*s)
+		write(fd, s++, 1);
+}
+
+void	ft_putendl_fd(char *s, int fd)
+{
+	ft_putstr_fd(s, d);
+	ft_putchar_fd('\n', fd);
+}
+
+void	ft_putnbr_fd_withfree(int n, int fd)
+{
+	char	*ret;
+
+	ret = ft_atoi(n);
+	ft_putstr_fd(ret, fd);
+	free(ret);
+}
+
+void	ft_putnbr_fd(int n, int fd)
+{
+	if (n == -2147483648)
+		ft_putstr_fd("-2147483648", fd);
+	else if (n < 0)
+	{
+		ft_putchar_fd('-', fd);
+		ft_putnbr_fd(-n, fd);
+	}
+	else
+	{
+		if (n > 9)
+			ft_putnbr_fd(n / 10, fd);
+		ft_putchar_fd(n % 10 + '0', fd);
+	}
+}
