@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: znichola <znichola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/09 15:36:43 by marvin            #+#    #+#             */
-/*   Updated: 2022/07/09 15:36:43 by marvin           ###   ########.fr       */
+/*   Created: 2022/07/09 15:36:43 by znichola          #+#    #+#             */
+/*   Updated: 2022/07/09 15:36:43 by znichola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,48 +27,47 @@
 
 /** PART 1**/
 
-// atoi		v
-// bzero	v
-// calloc	v	must use malloc	no idea if it's good
-// isalnum	v
-// isalpha	v
-// isascii	v
-// isdigit	v
-// isprint	v
-// memccpy	v	very uncertain about size and char exid condition
-// memchr	v
-// memcmp	v
-// memcpy	v
-// memmove
-// memset
-// strchr	v
-// strdup	v	must use malloc
-// strlcat	v
-// strlcpy	v
+// atoi			v
+// bzero		v
+// calloc		v	must use malloc	no idea if it's good
+// isalnum		v
+// isalpha		v
+// isascii		v
+// isdigit		v
+// isprint		v
+// memccpy		v	very uncertain about size and char exid condition
+// memchr		v
+// memcmp		v
+// memcpy		v
+// memmove		v
+// memset		v
+// strchr		v
+// strdup		v	must use malloc
+// strlcat		v
+// strlcpy		v
 size_t	ft_strlen(char *str);				//TODO: check if it still conforms
 size_t	ft_strcmp(char *s1, char *s2);		//TODO: check if it still conforms
-// strnstr	v
-// strrchr	v
-// tolower	v
-// toupper	v
+// strnstr		v
+// strrchr		v
+// tolower		v
+// toupper		v
 
 /** PART 2 **/
-// substr
-// strjoin
-// strtrim
-// split
-// itoa
-// strmapi
-// putchar_fd
-// putstr_fd
-// putendl_fd
-// putnbr_fd
+// substr		v
+// strjoin		v
+// strtrim		v
+// split		v	needs copious testing
+// itoa			v	needs a bunch of tests as well
+// strmapi		v	looks ok I think
+// putchar_fd	v
+// putstr_fd	v
+// putendl_fd	v
+// putnbr_fd	v
 
 /** BONUS **/
 typedef struct	s_list
 {
 void			*content;
-// size_t			content_size;
 struct s_list	*next;
 }				t_list;
 
