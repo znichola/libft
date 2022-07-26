@@ -36,10 +36,10 @@
 // isdigit		v
 // isprint		v
 // memccpy		v	very uncertain about size and char exid condition
-// memchr		v
-// memcmp		v
-// memcpy		v
-// memmove		v
+// memchr		v		TODO : all memm funcs need correction
+// memcmp		v		TODO : make them all cast to char before parameter use
+// memcpy		v f
+// memmove		v f
 // memset		v
 // strchr		v
 // strdup		v	must use malloc

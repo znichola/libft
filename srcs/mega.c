@@ -374,7 +374,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 		s++;
 		n++;
 	}
-	return (ret);
+	return (dest);
 }
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
