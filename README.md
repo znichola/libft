@@ -5,6 +5,7 @@ questions pdf: https://github.com/akaylee/42-holygraph
 # TODO
 
 ## Part 1
+```
 atoi		vf
 bzero		vf
 calloc		vf	must use malloc	no idea if it's good
@@ -29,8 +30,10 @@ strncmp		vf
 strnstr		vf
 tolower		vf
 toupper		vf
+```
 
 ## Part 2
+```
 substr		v
 strjoin		v
 strtrim		v
@@ -41,8 +44,10 @@ putchar_fd	v
 putstr_fd	v
 putendl_fd	v
 putnbr_fd	v
+```
 
 ## BONUS
+```
 ft_lstnew
 ft_lstadd_front
 ft_lstsize
@@ -52,3 +57,4 @@ ft_lstdelone
 ft_lstclear
 ft_lstiter
 ft_lstmap
+```
