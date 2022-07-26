@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: znichola <znichola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/09 15:36:43 by znichola          #+#    #+#             */
-/*   Updated: 2022/07/09 15:36:43 by znichola         ###   ########.fr       */
+/*   Created: 2022/07/26 14:16:40 by znichola          #+#    #+#             */
+/*   Updated: 2022/07/26 14:16:40 by znichola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ size_t	ft_strlen(char *str);				//TODO: check if it still conforms
 size_t	ft_strcmp(char *s1, char *s2);		//TODO: check if it still conforms
 // strnstr		v
 // strrchr		v
-// tolower		v
+// tolower		vf
 // toupper		v
 
 /** PART 2 **/
