@@ -366,17 +366,19 @@ int ft_memcmp(const void *s1, const void *s2, size_t n)
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	char	*ret;
+	char	*p_dest;
+	char	*p_src;
+	size_t	i;
 	
-	ret = (char *)dest;
-	while (n > 0)
+	p_dest = (char *)dest;
+	p_src = (char *)src;
+	i = 0;
+	while (i < n)
 	{
-		*dest = *src;
-		dest++
-		src++;
-		n++;
+		p_dest[i] = p_src[i];
+		i++;
 	}
-	return (ret);
+	return (dest);
 }
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
@@ -388,13 +390,13 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	p_dest = (char *)dest;
 	p_src = (char *)src;
 
-	if (src > dest)
+	if (p_src > p_dest)
 	{
 		i = n;
 		while  (i-- > 0)
 			p_dest[n] = p_src[n];
 	}
-	else if (src < dest)
+	else if (p_src < p_dest)
 	{
 		i = 0;
 		while  (i++ > n)
