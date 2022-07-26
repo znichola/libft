@@ -1,20 +1,4 @@
-{
-	char	*ret;
-	char	*r;
-
-	ret = (char *)malloc(sizeof(ret) * ( ft_strlen(s) + 1));
-	if(!ret)
-		return (NULL);
-	r = ret;
-	while (s)
-	{
-		r = s;
-		r++;
-		s++;
-	}
-	r = '\0';
-	return (ret);
-}
+#include "libft.h"
 
 char	*ft_strdupe(const char *s)
 {
@@ -43,7 +27,7 @@ char	*ft_strcpy(char *restrict dest, const char *src)
 char	*ft_strncpy(char *restrict dest, const char *restrict src, size_t n)
 {
 	int i;
-	
+
 	i = 0;
 	while (src[i] && i < n)
 	{
@@ -61,7 +45,7 @@ char	*ft_strncpy(char *restrict dest, const char *restrict src, size_t n)
 char	*ft_strcat(char *restrict dest, const char *restrict src)
 {
 	char	*ret;
-	
+
 	ret = dest;
 	while (*dest)
 		dest++;
@@ -69,17 +53,17 @@ char	*ft_strcat(char *restrict dest, const char *restrict src)
 	{
 		*dest = *src;
 		dest++;
-		drc++;
+		src++;
 	}
 	*dest = '\0';
-	return (ret)
+	return (ret);
 }
 
 char	*ft_strncat(char *restrict dest, const char *restrict src, size_t n)
 {
 	int		i;
 	char	*ret;
-	
+
 	ret = dest;
 	while (*dest)
 		dest++;
@@ -126,7 +110,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
 	char	*ret;
-	
+
 	ret = dest;
 	while (*src && size > 1)
 	{
@@ -145,7 +129,7 @@ char *ft_strnstr(const char *big, const char *little, size_t len)
 	char	*t;
 	char	*l;
 	int		i;
-	
+
 	while (*big && len > 0)
 	{
 		t = big;
@@ -168,7 +152,7 @@ char *ft_strnstr(const char *big, const char *little, size_t len)
 char *ft_strrchar(const char *s, int c)
 {
 	char	*t;
-	
+
 	t = s;
 	while (*s)
 		s++;
@@ -184,7 +168,7 @@ char *ft_strrchar(const char *s, int c)
 char *ft_strrchr(const char *s, int c)
 {
 	char	*t;
-	
+
 	*t == NULL;
 	while (*s)
 	{
@@ -200,7 +184,7 @@ char *ft_strrchr(const char *s, int c)
 char *ft_strchr(const char *s, int c)
 {
 	char	*t;
-	
+
 	*t == NULL;
 	while (*s)
 	{
@@ -213,7 +197,7 @@ char *ft_strchr(const char *s, int c)
 
 int	ft_tolower(int c)
 {
-	if (c >= 'A' && c <= 'Z'))
+	if (c >= 'A' && c <= 'Z')
 		return (c + 32);
 	return (c);
 }
@@ -252,30 +236,31 @@ int	ft_isascii(int c)
 
 void *memccpy(void *s1, const void *s2, int c, size_t n)
 {
-	char *ret;
+	size_t	i;
+	char	*p1;
+	char	*p2;
 
-	while (*s2 != c && n > 0)
+	i = 0;
+	p1 = (char *)s1;
+	p2 = (char *)s2;
+	while (p2[i] != c && i < n)
 	{
-		*s1 = *s2;
-		s1++;
-		s2++;
-		n--;
+		p1[i] = p2[i];
+		i++;
 	}
 	if (n > 0)
 	{
-		*s1 = *s2;
-		*ret = *(s1 + 1);
+		p1[i] = p2[i];
+		return (p1[i + 1]);
 	}
-	else
-		*ret = NULL;
-	return (ret)
+	return (NULL);
 }
 
 int	ft_atoi(const char *str)
 {
 	int	s;
 	int	n;
-	
+
 	n = 0;
 	s = 1;
 	while (*str == ' ' || *str == '/f' || *str == '/n'
@@ -297,24 +282,28 @@ int	ft_atoi(const char *str)
 
 void	bzero(void *s, size_t n)
 {
+	char	*p;
+
+	p = (char *)s;
 	while (n > 0)
 	{
-		*s = '\0';
-		s++;
+		*p = '\0';
+		p++;
 		n--;
 	}
 }
 
 void *ft_memchr(const void *s, int c, size_t n)
 {
+	char	*p;
 	char	*ret;
 
 	*ret = NULL;
 	while (n > 0)
 	{
-		if (*s == c)
-			return (s)
-		s++;
+		if (*p == c)
+			return (s);
+		p++;
 		n--;
 	}
 	return (ret);
@@ -322,24 +311,24 @@ void *ft_memchr(const void *s, int c, size_t n)
 
 void *ft_memrchr(const void *s, int c, size_t n)
 {
-	char	*ret;
-	
-	*ret = NULL;
+	char	*p;
+
+	p = (char *)s;
 	n--;
 	while (n >= 0)
 	{
-		if (s[n] == c)
-			return (&s[n]);
+		if (p[n] == c)
+			return (&p[n]);
 		n--;
 	}
-	return (ret);
+	return (NULL);
 }
 
 void	*ft_calloc(size_t nelem, size_t elsize)
 {
-	void *ret;
-	
-	ret = malloc(elsize * nelem);
+	char	*ret;
+
+	ret = (char *)malloc(elsize * nelem);
 	if (!ret || elsize <= 0 || nelem <= 0)
 		return (NULL);
 	while (nelem > 0)
@@ -351,56 +340,63 @@ void	*ft_calloc(size_t nelem, size_t elsize)
 }
 
 
-int ft_memcmp(const void *s1, const void *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
+	char	*p1;
+	char	*p2;
+
+	p1 = (char *)s1;
+	p2 = (char *)s2;
 	if (n <= 0)
 		return (0);
-	while (n > 0 && *s1 == *s2 && *s1)
+	while (n > 0 && *p1 == *p2 && *p1)
 	{
-		s1++;
-		s2++;
+		p1++;
+		p2++;
 		n--;
 	}
-	return (s1 - s2);
+	return (p1 - p2);
 }
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	char	*p_dest;
-	char	*p_src;
-	size_t	i;
-	
-	p_dest = (char *)dest;
-	p_src = (char *)src;
-	i = 0;
-	while (i < n)
+	char	*d;
+	char	*s;
+	char	*ret;
+
+	d = (char *)dest;
+	s = (char *)src;
+	ret = d;
+	while (n > 0)
 	{
-		p_dest[i] = p_src[i];
-		i++;
+		*d = *s;
+		d++;
+		s++;
+		n++;
 	}
 	return (dest);
 }
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	char	*p_dest;
-	char	*p_src;
+	char	*d;
+	char	*s;
 	int		i;
 
-	p_dest = (char *)dest;
-	p_src = (char *)src;
+	d = (char *)dest;
+	s = (char *)src;
 
-	if (p_src > p_dest)
+	if (src > dest)
 	{
 		i = n;
 		while  (i-- > 0)
-			p_dest[n] = p_src[n];
+			d[n] = s[n];
 	}
-	else if (p_src < p_dest)
+	else if (src < dest)
 	{
 		i = 0;
 		while  (i++ > n)
-			p_dest[n] = p_src[n];
+			d[n] = s[n];
 	}
 	return (dest);
 }

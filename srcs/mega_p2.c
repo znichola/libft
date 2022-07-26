@@ -1,3 +1,5 @@
+#include "libft.h"
+
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*ret;
@@ -21,7 +23,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*ret;
 	char	*r;
-	
+
 	ret = (char *)malloc(sizeof(*ret) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (!ret)
 		return (NULL);
@@ -38,11 +40,11 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		r++;
 		s2++;
 	}
-	*r = ''
+	*r = '\0';
 	return (ret);
 }
 
-int	ft_isin(char *s, char c)
+static int	ft_isin(char *s, char c)
 {
 	while (*s)
 	{
@@ -60,12 +62,12 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*r;
 	char	*start;
 	char	*end;
-	
+
 	start = s1;
 	end = s1 + 1 - ft_strlen(s1);
-	while (ft_isin(*start))
+	while (ft_isin(set, *start))
 		start++;
-	while (ft_isin(*end));
+	while (ft_isin(set, *end));
 		end--;
 	if (start == end)
 		return (NULL);
@@ -109,7 +111,7 @@ int	ft_countwords(char const *s, char const c)
 {
 	int		count;
 	char	*t;
-	
+
 	count = 1;
 	if (!*s)
 		return (0);
@@ -135,7 +137,7 @@ char	**ft_split(char const *s, char c)
 	int		i;
 	int		word_count;
 
-	word_count = ft_countwords(s, c)
+	word_count = ft_countwords(s, c);
 	ret = (char **)malloc(sizeof(char*) * (word_count + 1));
 	if (!ret)
 		return (NULL);
@@ -187,7 +189,7 @@ char	*ft_itoa(int n)
 {
 	char	*s;
 	int		len;
-	
+
 	len = 1;
 	while (n / len * 10 == 0)
 		len++;
@@ -230,7 +232,7 @@ void	ft_putstr_fd(char *s, int fd)
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	ft_putstr_fd(s, d);
+	ft_putstr_fd(s, fd);
 	ft_putchar_fd('\n', fd);
 }
 
