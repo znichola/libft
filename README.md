@@ -5,28 +5,28 @@ questions pdf: https://github.com/akaylee/42-holygraph
 # TODO
 
 ## Part 1
-atoi		v
-bzero		v
-calloc		v	must use malloc	no idea if it's good
-isalnum		v
-isalpha		v
-isascii		v
-isdigit		v
-isprint		v
-memcmp		v	make them all cast to char before parameter use
-memchr		v	all memm funcs need correction
-memcpy		v
-memccpy		v	very uncertain about size and char exit condition
-memmove		v
-memset		v
-strchr		v
-strrchr		v
-strdup		v	must use malloc
-strlcat		v
-strlcpy		v
-strlen		v			//TODO: check if it still conforms
-strncmp		v
-strnstr		v
+atoi		vf
+bzero		vf
+calloc		vf	must use malloc	no idea if it's good
+isalnum		vf
+isalpha		vf
+isascii		vf
+isdigit		vf
+isprint		vf
+memcmp		vf
+memchr		vf	all memm funcs need correction
+memcpy		vf
+memccpy		vf	very uncertain about size and char exit condition
+memmove		vf
+memset		vf
+strchr		vf
+strrchr		vf
+strdup		vf	must use malloc
+strlcat		vf
+strlcpy		vf
+strlen		vf
+strncmp		vf
+strnstr		vf
 tolower		vf
 toupper		vf
 
