@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: znichola <znichola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,12 +12,13 @@
 
 #include "libft.h"
 
-size_t	ft_strcmp(char *s1, char *s2)
+size_t	ft_strncmp(char *s1, char *s2, size_t n)
 {
-	while (*s1 != '\0' && *s2 != '\0' && *s1 == *s2)
+	while (*s1 != '\0' && *s2 != '\0' && *s1 == *s2 && n > 0)
 	{
 		s1++;
 		s2++;
+		n--;
 	}
 	return (*s1 - *s2);
 }

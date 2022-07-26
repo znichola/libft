@@ -85,7 +85,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (ret);
 }
 
-char	*ft_nextword(char const **s, char const c)
+static char	*ft_nextword(char const **s, char const c)
 {
 	char	*ret;
 	char	*t;
@@ -107,7 +107,7 @@ char	*ft_nextword(char const **s, char const c)
 	return (ret);
 }
 
-int	ft_countwords(char const *s, char const c)
+static int	ft_countwords(char const *s, char const c)
 {
 	int		count;
 	char	*t;

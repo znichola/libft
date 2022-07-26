@@ -1,6 +1,6 @@
 #include "libft.h"
 
-char	*ft_strdupe(const char *s)
+char	*ft_strdup(const char *s)
 {
 	char	*ret;
 
@@ -124,7 +124,7 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 	return ft_strlen(src);
 }
 
-char *ft_strnstr(const char *big, const char *little, size_t len)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	char	*t;
 	char	*l;
@@ -149,7 +149,7 @@ char *ft_strnstr(const char *big, const char *little, size_t len)
 	return (NULL);
 }
 
-char *ft_strrchar(const char *s, int c)
+char	*ft_strrchar(const char *s, int c)
 {
 	char	*t;
 
@@ -165,7 +165,7 @@ char *ft_strrchar(const char *s, int c)
 	return (NULL);
 }
 
-char *ft_strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
 	char	*t;
 
@@ -181,7 +181,7 @@ char *ft_strrchr(const char *s, int c)
 	return (t);
 }
 
-char *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
 	char	*t;
 
@@ -207,7 +207,7 @@ int	ft_toupper(int c)
 	if (c >= 'a' && c <= 'z')
 		return (c - 32);
 	return (c);
-};
+}
 
 int	ft_isalpha(int c)
 {
@@ -234,7 +234,7 @@ int	ft_isascii(int c)
 	return (c >= 0 && c < 128);
 }
 
-void *memccpy(void *s1, const void *s2, int c, size_t n)
+void	*ft_memccpy(void *s1, const void *s2, int c, size_t n)
 {
 	size_t	i;
 	char	*p1;
@@ -280,7 +280,7 @@ int	ft_atoi(const char *str)
 	return (n * s);
 }
 
-void	bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
 	char	*p;
 
@@ -293,7 +293,7 @@ void	bzero(void *s, size_t n)
 	}
 }
 
-void *ft_memchr(const void *s, int c, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
 	char	*p;
 	char	*ret;
@@ -309,7 +309,7 @@ void *ft_memchr(const void *s, int c, size_t n)
 	return (ret);
 }
 
-void *ft_memrchr(const void *s, int c, size_t n)
+void	*ft_memrchr(const void *s, int c, size_t n)
 {
 	char	*p;
 
