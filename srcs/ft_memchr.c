@@ -6,7 +6,7 @@
 /*   By: znichola <znichola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 19:56:00 by znichola          #+#    #+#             */
-/*   Updated: 2022/07/26 19:56:00 by znichola         ###   ########.fr       */
+/*   Updated: 2022/08/01 18:39:16 by znichola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,15 @@
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	char	*p;
-	char	*ret;
 
-	*ret = NULL;
+	p = (char *)s;
 	while (n > 0)
 	{
 		if (*p == c)
-			return (s);
+			return (p);
 		p++;
 		n--;
 	}
-	return (ret);
+	*p = NULL;
+	return (p);
 }
