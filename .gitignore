@@ -52,5 +52,5 @@ Mkfile.old
 dkms.conf
 
 # My additions
-test
+libft_test
 .vscode

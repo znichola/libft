@@ -12,12 +12,16 @@
 
 #include "libft.h"
 
+extern size_t	ft_strlcpy(char *dest, const char *src, size_t size);
+
 char	*ft_strdup(const char *s)
 {
 	char	*ret;
+	size_t	len;
 
-	ret = (char *)malloc(sizeof(ret) * ( ft_strlen(s) + 1));
+	len = ft_strlen(s) + 1;
+	ret = (char *)malloc(sizeof(ret) * len);
 	if(!ret)
 		return (NULL);
-	return (ft_strcpy(ret, s));
+	return (ft_memcpy(ret, s, len));
 }

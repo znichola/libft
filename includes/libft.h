@@ -46,7 +46,7 @@ char	*ft_strrchar(const char *s, int c);
 char	*ft_strdup(const char *s);
 size_t	ft_strlcat(char *dest, const char *src, size_t size);
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);
-size_t	ft_strlen(char *str);
+size_t	ft_strlen(const char *str);
 size_t	ft_strncmp(char *s1, char *s2, size_t n);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 char	*ft_strrchr(const char *s, int c);
@@ -55,7 +55,6 @@ int		ft_toupper(int c);
 
 // void	*ft_memrchr(const void *s, int c, size_t n);
 // char	*ft_strncpy(char *restrict dest, const char *restrict src, size_t n);
-// char	*ft_strcpy(char *restrict dest, const char *src);
 // char	*ft_strcat(char *restrict dest, const char *restrict src);
 // char	*ft_strncat(char *restrict dest, const char *restrict src, size_t n);
 
@@ -75,6 +74,7 @@ static char	*ft_nextword(char const **s, char const c);
 static int	ft_countwords(char const *s, char const c);
 static char	*rec_itoa_old(int n, char *s);
 static char	*rec_itoa(long n, char *s);
+static char	*ft_strcpy(char *restrict dest, const char *src);
 
 /** BONUS **/
 typedef struct	s_list

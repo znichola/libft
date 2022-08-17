@@ -29,7 +29,7 @@ void	*ft_memccpy(void *s1, const void *s2, int c, size_t n)
 	if (n > 0)
 	{
 		p1[i] = p2[i];
-		return (p1[i + 1]);
+		return (&p1[i + 1]);
 	}
 	return (NULL);
 }

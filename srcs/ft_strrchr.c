@@ -16,14 +16,14 @@ char	*ft_strrchr(const char *s, int c)
 {
 	char	*t;
 
-	*t == NULL;
+	t == NULL;
 	while (*s)
 	{
 		if (*s == c)
-			t = s;
+			t = (char *)s;
 		s++;
 	}
 	if (*s == c)
-			t = s;
+			t = (char *)s;
 	return (t);
 }
