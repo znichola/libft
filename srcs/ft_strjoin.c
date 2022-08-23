@@ -1,32 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: znichola <znichola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/26 19:51:28 by znichola          #+#    #+#             */
-/*   Updated: 2022/07/26 19:51:28 by znichola         ###   ########.fr       */
+/*   Created: 2022/08/23 09:39:29 by znichola          #+#    #+#             */
+/*   Updated: 2022/08/23 09:39:29 by znichola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+ * Allocates (with malloc(3)) and returns a new
+ * string, which is the result of the concatenation
+ * of ’s1’ and ’s2’.
+ */
+
+
 #include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	void	*ret;
-	size_t	len;
+	char	*ret;
+	char	*r;
 
-	len = nmemb * size;
-	if (nmemb > len)
-		return (NULL);
-	ret = (void *)malloc(len);
+	ret = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (!ret)
 		return (NULL);
-	ft_bzero(ret, len);
+	r = ret;
+	while (*s1)
+		*r++ = *s1++;
+	while (*s2)
+		*r++ = *s2++;
+	*r = '\0';
 	return (ret);
 }
-	// sizeof(size_t)
-	// 	printf("\nalloc size %ld\n", len);
-	// hacky if(len <= 1)
-	// idk if this is just for my tester

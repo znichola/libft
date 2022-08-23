@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: znichola <znichola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/26 19:51:28 by znichola          #+#    #+#             */
-/*   Updated: 2022/07/26 19:51:28 by znichola         ###   ########.fr       */
+/*   Created: 2022/08/23 09:44:34 by znichola          #+#    #+#             */
+/*   Updated: 2022/08/23 09:44:34 by znichola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+void	ft_putnbr_fd(int n, int fd)
 {
-	void	*ret;
-	size_t	len;
-
-	len = nmemb * size;
-	if (nmemb > len)
-		return (NULL);
-	ret = (void *)malloc(len);
-	if (!ret)
-		return (NULL);
-	ft_bzero(ret, len);
-	return (ret);
+	if (n == -2147483648)
+		ft_putstr_fd("-2147483648", fd);
+	else if (n < 0)
+	{
+		ft_putchar_fd('-', fd);
+		ft_putnbr_fd(-n, fd);
+	}
+	else
+	{
+		if (n > 9)
+			ft_putnbr_fd(n / 10, fd);
+		ft_putchar_fd(n % 10 + '0', fd);
+	}
 }
-	// sizeof(size_t)
-	// 	printf("\nalloc size %ld\n", len);
-	// hacky if(len <= 1)
-	// idk if this is just for my tester

@@ -27,8 +27,8 @@ BONUS	=	lstnew       lstadd_front lstsize      lstlast      lstadd_back  \
 			lstdelone    lstclear     lstiter      lstmap
 
 # SRC			+=	$(addsuffix .c, $(addprefix srcs/ft_, $(PART_1)))
-SRC			+=	$(addsuffix .c, $(addprefix ft_, $(PART_1)))
-# SRC			+=	$(addsuffix .c, $(addprefix srcs/ft_, $(PART_2)))
+SRC			+=	$(addsuffix .c, $(addprefix src/ft_, $(PART_1)))
+SRC			+=	$(addsuffix .c, $(addprefix src/ft_, $(PART_2)))
 OBJ			=	$(SRC:.c=.o)
 
 # special include directories

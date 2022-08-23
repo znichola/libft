@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: znichola <znichola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/26 19:51:28 by znichola          #+#    #+#             */
-/*   Updated: 2022/07/26 19:51:28 by znichola         ###   ########.fr       */
+/*   Created: 2022/08/23 09:42:17 by znichola          #+#    #+#             */
+/*   Updated: 2022/08/23 09:42:17 by znichola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	void	*ret;
-	size_t	len;
+	char	*ret;
+	int		i;
 
-	len = nmemb * size;
-	if (nmemb > len)
-		return (NULL);
-	ret = (void *)malloc(len);
+	ret = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
 	if (!ret)
 		return (NULL);
-	ft_bzero(ret, len);
+	i = 0;
+	while (s[i])
+	{
+		ret[i] = f(i, s[i]);
+		i++;
+	}
+	ret[i] = '\0';
 	return (ret);
 }
-	// sizeof(size_t)
-	// 	printf("\nalloc size %ld\n", len);
-	// hacky if(len <= 1)
-	// idk if this is just for my tester

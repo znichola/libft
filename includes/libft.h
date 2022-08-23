@@ -73,7 +73,7 @@ void	ft_putnbr_fd(int n, int fd);
 // static char	*ft_nextword(char const **s, char const c);
 // static int	ft_countwords(char const *s, char const c);
 // static char	*rec_itoa_old(int n, char *s);
-// static char	*rec_itoa(long n, char *s);
+// static char	*ft_rec_itoa(long n, char *s);
 // static char	*ft_strcpy(char *restrict dest, const char *src);
 
 /** BONUS **/

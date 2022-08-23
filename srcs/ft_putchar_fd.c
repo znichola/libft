@@ -1,32 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: znichola <znichola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/26 19:51:28 by znichola          #+#    #+#             */
-/*   Updated: 2022/07/26 19:51:28 by znichola         ###   ########.fr       */
+/*   Created: 2022/08/23 09:42:54 by znichola          #+#    #+#             */
+/*   Updated: 2022/08/23 09:42:54 by znichola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+void	ft_putchar_fd(char c, int fd)
 {
-	void	*ret;
-	size_t	len;
-
-	len = nmemb * size;
-	if (nmemb > len)
-		return (NULL);
-	ret = (void *)malloc(len);
-	if (!ret)
-		return (NULL);
-	ft_bzero(ret, len);
-	return (ret);
+	write(fd, &c, 1);
 }
-	// sizeof(size_t)
-	// 	printf("\nalloc size %ld\n", len);
-	// hacky if(len <= 1)
-	// idk if this is just for my tester
