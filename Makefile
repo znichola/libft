@@ -14,8 +14,22 @@
 NAME	= libft.a
 
 # other source files and the associated object files (this can be blank)
-SRC		= srcs/ft_putchar.c srcs/ft_putstr.c srcs/ft_strlen.c srcs/ft_strcmp.c
-OBJ		= $(SRC:.c=.o)
+# atoi bzero calloc isalnum isalpha isascii isdigit isprint memcmp memchr memcpy memccpy memmove memset strchr strrchr strdup strlcat strlcpy strlen strncmp strnstr tolower toupper substr strjoin strtrim split itoa strmapi putchar_fd putstr_fd putendl_fd putnbr_fd lstnew lstadd_front lstsize lstlast lstadd_back lstdelone lstclear lstiter lstmap
+
+PART_1	=	atoi         bzero        calloc       isalnum      isalpha      \
+			isascii      isdigit      isprint      memcmp       memchr       \
+			memcpy       memccpy      memmove      memset       strchr       \
+			strrchr      strdup       strlcat      strlcpy      strlen       \
+			strncmp      strnstr      tolower      toupper
+PART_2	=	substr       strjoin      strtrim      split        itoa         \
+			strmapi      putchar_fd   putstr_fd    putendl_fd   putnbr_fd
+BONUS	=	lstnew       lstadd_front lstsize      lstlast      lstadd_back  \
+			lstdelone    lstclear     lstiter      lstmap
+
+# SRC			+=	$(addsuffix .c, $(addprefix srcs/ft_, $(PART_1)))
+SRC			+=	$(addsuffix .c, $(addprefix ft_, $(PART_1)))
+# SRC			+=	$(addsuffix .c, $(addprefix srcs/ft_, $(PART_2)))
+OBJ			=	$(SRC:.c=.o)
 
 # special include directories
 INCLUDE = includes/

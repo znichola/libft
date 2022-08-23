@@ -14,23 +14,20 @@
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	char	*t;
+	char	*b;
 	char	*l;
-	int		i;
+	size_t	i;
 
-	while (*big && len > 0)
+	if (*little == '\0')
+		return ((char *)big);
+	while (*big != '\0' && len > 0)
 	{
-		t = (char *)big;
+		b = (char *)big;
 		l = (char *)little;
 		i = len;
-		while (*t == *l && i < 0)
-		{
+		while (*b++ == *l++ && i-- > 0)
 			if (*l == '\0')
 				return ((char *)big);
-			t++;
-			l++;
-			i--;
-		}
 		big++;
 		len--;
 	}

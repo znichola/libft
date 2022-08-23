@@ -47,7 +47,7 @@ char	*ft_strdup(const char *s);
 size_t	ft_strlcat(char *dest, const char *src, size_t size);
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);
 size_t	ft_strlen(const char *str);
-size_t	ft_strncmp(char *s1, char *s2, size_t n);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 char	*ft_strrchr(const char *s, int c);
 int		ft_tolower(int c);
@@ -69,12 +69,12 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
-static int	ft_isin(char *s, char c);
-static char	*ft_nextword(char const **s, char const c);
-static int	ft_countwords(char const *s, char const c);
-static char	*rec_itoa_old(int n, char *s);
-static char	*rec_itoa(long n, char *s);
-static char	*ft_strcpy(char *restrict dest, const char *src);
+// static int	ft_isin(char *s, char c);
+// static char	*ft_nextword(char const **s, char const c);
+// static int	ft_countwords(char const *s, char const c);
+// static char	*rec_itoa_old(int n, char *s);
+// static char	*rec_itoa(long n, char *s);
+// static char	*ft_strcpy(char *restrict dest, const char *src);
 
 /** BONUS **/
 typedef struct	s_list
