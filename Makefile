@@ -27,12 +27,13 @@ BONUS	=	lstnew       lstadd_front lstsize      lstlast      lstadd_back  \
 			lstdelone    lstclear     lstiter      lstmap
 
 # SRC			+=	$(addsuffix .c, $(addprefix srcs/ft_, $(PART_1)))
-SRC			+=	$(addsuffix .c, $(addprefix src/ft_, $(PART_1)))
-SRC			+=	$(addsuffix .c, $(addprefix src/ft_, $(PART_2)))
+SRC			+=	$(addsuffix .c, $(addprefix srcs/ft_, $(PART_1)))
+SRC			+=	$(addsuffix .c, $(addprefix srcs/ft_, $(PART_2)))
 OBJ			=	$(SRC:.c=.o)
 
 # special include directories
-INCLUDE = includes/
+# INCLUDE = includes/
+INCLUDE = .
 
 # select the compiler and flags
 CC		= gcc
@@ -51,14 +52,23 @@ all : $(NAME)
 $(NAME): $(OBJ)
 		${LIB} ${NAME} ${OBJ}
 
+bonus : $(OBJ)
+		SRC	+=	$(addsuffix .c, $(addprefix srcs/ft_, $(BONUS)))
+		${LIB} ${NAME} ${OBJ}
+
+# Add a rule called 'so' in your Makefile to compile your libft in dynamic library instead of static
+# so:
+# 	$(CC) -fPIC $(CFLAGS) -c $(SRC) -I ${INCLUDE}
+# 	gcc -shared -o libft.so $(OBJ) -I ${INCLUDE}
+
 # remove binaries
 clean :
 		${RM} $(OBJ)
 
 # # remove binaries and other junk
 fclean : clean
-		${RM} ${NAME}
+		${RM} srcs/${NAME}
 
 re : fclean all
 
-.PHONY: all re clean fclean
+.PHONY: $(NAME) all re clean fclean bonus

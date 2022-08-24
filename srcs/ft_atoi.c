@@ -29,9 +29,11 @@ int	ft_atoi(const char *str)
 		str++;
 	}
 	while (ft_isdigit(*str))
-	{
-		n = n * 10 + *str - '0';
-		str++;
-	}
-	return (n * s);
+		n = n * 10 + *str++ - '0';
+	return ((int)n * s);
 }
+
+// void main(void)
+// {
+// 	printf("%d\n", ft_atoi("2147483647"));
+// }
