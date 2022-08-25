@@ -26,14 +26,18 @@ PART_2	=	substr       strjoin      strtrim      split        itoa         \
 BONUS	=	lstnew       lstadd_front lstsize      lstlast      lstadd_back  \
 			lstdelone    lstclear     lstiter      lstmap
 
+SRCS	= srcs/
 # SRC			+=	$(addsuffix .c, $(addprefix srcs/ft_, $(PART_1)))
-SRC			+=	$(addsuffix .c, $(addprefix srcs/ft_, $(PART_1)))
-SRC			+=	$(addsuffix .c, $(addprefix srcs/ft_, $(PART_2)))
-OBJ			=	$(SRC:.c=.o)
+SRC		+=	$(addsuffix .c, $(addprefix $(SRCS)ft_, $(PART_1)))
+SRC		+=	$(addsuffix .c, $(addprefix $(SRCS)ft_, $(PART_2)))
+OBJ		=	$(SRC:.c=.o)
+
+SRCB	=	$(addsuffix .c, $(addprefix $(SRCS)ft_, $(BONUS)))
+OBJB	=	$(SRCB:.c=.o)
 
 # special include directories
-# INCLUDE = includes/
-INCLUDE = .
+INCLUDE = includes/
+# INCLUDE = .
 
 # select the compiler and flags
 CC		= gcc
@@ -52,22 +56,25 @@ all : $(NAME)
 $(NAME): $(OBJ)
 		${LIB} ${NAME} ${OBJ}
 
-bonus : $(OBJ)
-		SRC	+=	$(addsuffix .c, $(addprefix srcs/ft_, $(BONUS)))
-		${LIB} ${NAME} ${OBJ}
+# bonus: $(OBJS_B)
+# 	$(AR) $(NAME) $^
+
+bonus : $(OBJ) $(OBJB)
+		${LIB} ${NAME} $(OBJ) ${OBJB}
 
 # Add a rule called 'so' in your Makefile to compile your libft in dynamic library instead of static
-# so:
-# 	$(CC) -fPIC $(CFLAGS) -c $(SRC) -I ${INCLUDE}
-# 	gcc -shared -o libft.so $(OBJ) -I ${INCLUDE}
+so:
+	$(CC) -fPIC $(CFLAGS) -c $(SRC) $(SRCB) -I ${INCLUDE}
+	gcc -shared -o libft.so $(OBJ) $(OBJB) -I ${INCLUDE}
 
 # remove binaries
 clean :
 		${RM} $(OBJ)
+		${RM} $(OBJB)
 
 # # remove binaries and other junk
 fclean : clean
-		${RM} srcs/${NAME}
+		${RM} ${NAME}
 
 re : fclean all
 
