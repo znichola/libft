@@ -36,8 +36,8 @@ SRCB	=	$(addsuffix .c, $(addprefix $(SRCS)ft_, $(BONUS)))
 OBJB	=	$(SRCB:.c=.o)
 
 # special include directories
-INCLUDE = includes/
-# INCLUDE = .
+# INCLUDE = includes/
+INCLUDE = .
 
 # select the compiler and flags
 CC		= gcc
