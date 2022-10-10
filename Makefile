@@ -6,7 +6,7 @@
 #    By: znichola <znichola@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/24 09:03:40 by znichola          #+#    #+#              #
-#    Updated: 2022/10/10 14:17:57 by znichola         ###   ########.fr        #
+#    Updated: 2022/10/10 17:29:40 by znichola         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,13 +24,11 @@ PART_2	=	substr       striteri     strjoin      strtrim      split        \
 BONUS	=	lstnew       lstadd_front lstsize      lstlast      lstadd_back  \
 			lstdelone    lstclear     lstiter      lstmap
 
-SRCS	= srcs/
-
-SRC		+=	$(addsuffix .c, $(addprefix $(SRCS)ft_, $(PART_1)))
-SRC		+=	$(addsuffix .c, $(addprefix $(SRCS)ft_, $(PART_2)))
+SRC		+=	$(addsuffix .c, $(addprefix ft_, $(PART_1)))
+SRC		+=	$(addsuffix .c, $(addprefix ft_, $(PART_2)))
 OBJ		=	$(SRC:.c=.o)
 
-SRCB	=	$(addsuffix .c, $(addprefix $(SRCS)ft_, $(BONUS)))
+SRCB	=	$(addsuffix .c, $(addprefix ft_, $(BONUS)))
 OBJB	=	$(SRCB:.c=.o)
 
 # special include directories
@@ -39,25 +37,24 @@ INCLUDE = .
 # select the compiler and flags
 CC		= gcc
 CFLAGS	= -Wall -Wextra -Werror
-LIB		= ar rcs
+LIB		= ar rsv
 RM		= rm -f
 
 # specify how to compile the .c files
 .c.o :
-		$(CC) $(CFLAGS) -c $< -o $(<:.c=.o) -I ${INCLUDE}
+		$(CC) $(CFLAGS) -I${INCLUDE} -c $< -o $(@)
 
 # if you type 'make' without arguments, this is the default
 all : $(NAME)
 
 # specify how to compile the NAME
 $(NAME): $(OBJ)
-		${LIB} ${NAME} ${OBJ}
+		${LIB} ${@} ${OBJ}
 
 # libft.a : $(NAME)
 
 bonus : $(OBJ) $(OBJB)
 		${LIB} ${NAME} $(OBJ) ${OBJB}
-
 
 # remove binaries
 clean :
