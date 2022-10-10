@@ -6,11 +6,21 @@
 /*   By: znichola <znichola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 09:41:09 by znichola          #+#    #+#             */
-/*   Updated: 2022/10/10 11:35:11 by znichola         ###   ########.fr       */
+/*   Updated: 2022/10/10 14:56:06 by znichola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static void	ft_freeme(char **s, int i)
+{
+	while (i >= 0)
+	{
+		free(s[i]);
+		i--;
+	}
+	free(s);
+}
 
 static char	*ft_nextword(char **str, char const c)
 {
@@ -68,7 +78,14 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	i = -1;
 	while (++i < word_count)
+	{
 		ret[i] = ft_nextword((char **)&s, c);
+		if (ret[i] == NULL)
+		{
+			ft_freeme(ret, i);
+			return (NULL);
+		}
+	}
 	ret[i] = NULL;
 	return (ret);
 }

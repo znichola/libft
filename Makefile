@@ -6,7 +6,7 @@
 #    By: znichola <znichola@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/24 09:03:40 by znichola          #+#    #+#              #
-#    Updated: 2022/10/10 14:00:26 by znichola         ###   ########.fr        #
+#    Updated: 2022/10/10 14:17:57 by znichola         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,8 +18,9 @@ PART_1	=	atoi         bzero        calloc       isalnum      isalpha      \
 			memcpy       memccpy      memmove      memset       strchr       \
 			strrchr      strdup       strlcat      strlcpy      strlen       \
 			strncmp      strnstr      tolower      toupper
-PART_2	=	substr       strjoin      strtrim      split        itoa         \
-			strmapi      putchar_fd   putstr_fd    putendl_fd   putnbr_fd
+PART_2	=	substr       striteri     strjoin      strtrim      split        \
+			itoa         strmapi      putchar_fd   putstr_fd    putendl_fd   \
+			putnbr_fd
 BONUS	=	lstnew       lstadd_front lstsize      lstlast      lstadd_back  \
 			lstdelone    lstclear     lstiter      lstmap
 
