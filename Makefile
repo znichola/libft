@@ -3,18 +3,15 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: znichola <znichola@student.42lausanne.ch>  +#+  +:+       +#+         #
+#    By: znichola <znichola@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/24 09:03:40 by znichola          #+#    #+#              #
-#    Updated: 2022/07/09 16:23:47 by znichola         ###   ########.fr        #
+#    Updated: 2022/10/10 14:00:26 by znichola         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # the name of the NAME program
 NAME	= libft.a
-
-# other source files and the associated object files (this can be blank)
-# atoi bzero calloc isalnum isalpha isascii isdigit isprint memcmp memchr memcpy memccpy memmove memset strchr strrchr strdup strlcat strlcpy strlen strncmp strnstr tolower toupper substr strjoin strtrim split itoa strmapi putchar_fd putstr_fd putendl_fd putnbr_fd lstnew lstadd_front lstsize lstlast lstadd_back lstdelone lstclear lstiter lstmap
 
 PART_1	=	atoi         bzero        calloc       isalnum      isalpha      \
 			isascii      isdigit      isprint      memcmp       memchr       \
@@ -27,7 +24,7 @@ BONUS	=	lstnew       lstadd_front lstsize      lstlast      lstadd_back  \
 			lstdelone    lstclear     lstiter      lstmap
 
 SRCS	= srcs/
-# SRC			+=	$(addsuffix .c, $(addprefix srcs/ft_, $(PART_1)))
+
 SRC		+=	$(addsuffix .c, $(addprefix $(SRCS)ft_, $(PART_1)))
 SRC		+=	$(addsuffix .c, $(addprefix $(SRCS)ft_, $(PART_2)))
 OBJ		=	$(SRC:.c=.o)
@@ -36,7 +33,6 @@ SRCB	=	$(addsuffix .c, $(addprefix $(SRCS)ft_, $(BONUS)))
 OBJB	=	$(SRCB:.c=.o)
 
 # special include directories
-# INCLUDE = includes/
 INCLUDE = .
 
 # select the compiler and flags
@@ -56,18 +52,11 @@ all : $(NAME)
 $(NAME): $(OBJ)
 		${LIB} ${NAME} ${OBJ}
 
-libft.a : $(NAME)
-
-# bonus: $(OBJS_B)
-# 	$(AR) $(NAME) $^
+# libft.a : $(NAME)
 
 bonus : $(OBJ) $(OBJB)
 		${LIB} ${NAME} $(OBJ) ${OBJB}
 
-# Add a rule called 'so' in your Makefile to compile your libft in dynamic library instead of static
-# so:
-# 	$(CC) -fPIC $(CFLAGS) -c $(SRC) $(SRCB) -I ${INCLUDE}
-# 	gcc -shared -o libft.so $(OBJ) $(OBJB) -I ${INCLUDE}
 
 # remove binaries
 clean :

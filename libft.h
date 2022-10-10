@@ -6,20 +6,12 @@
 /*   By: znichola <znichola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 11:33:03 by znichola          #+#    #+#             */
-/*   Updated: 2022/10/10 11:33:08 by znichola         ###   ########.fr       */
+/*   Updated: 2022/10/10 14:08:37 by znichola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-
-// # ifdef __unix__
-// #  include <unistd.h>
-// # endif
-
-// # ifdef _WIN32
-// #  include <io.h>
-// # endif
 
 # include <unistd.h>
 # include <string.h>
@@ -55,6 +47,7 @@ int		ft_toupper(int c);
 
 /** PART 2 **/
 char	*ft_substr(char const *s, unsigned int start, size_t len);
+void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
@@ -64,12 +57,6 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
-// static int	ft_isin(char *s, char c);
-// static char	*ft_nextword(char const **s, char const c);
-// static int	ft_countwords(char const *s, char const c);
-// static char	*rec_itoa_old(int n, char *s);
-// static char	*ft_rec_itoa(long n, char *s);
-// static char	*ft_strcpy(char *restrict dest, const char *src);
 
 /** BONUS **/
 typedef struct s_list
