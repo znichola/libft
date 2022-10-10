@@ -6,7 +6,7 @@
 /*   By: znichola <znichola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 11:33:21 by znichola          #+#    #+#             */
-/*   Updated: 2022/10/10 11:35:29 by znichola         ###   ########.fr       */
+/*   Updated: 2022/10/10 13:35:15 by znichola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,3 @@ int	ft_atoi(const char *str)
 		n = n * 10 + *str++ - '0';
 	return ((int)n * s);
 }
-
-// void main(void)
-// {
-// 	printf("%d\n", ft_atoi("2147483647"));
-// }
