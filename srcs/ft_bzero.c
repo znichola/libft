@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: znichola <znichola@student.42lausanne.ch>  +#+  +:+       +#+        */
+/*   By: znichola <znichola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/26 19:49:17 by znichola          #+#    #+#             */
-/*   Updated: 2022/07/26 19:49:17 by znichola         ###   ########.fr       */
+/*   Created: 2022/10/10 11:33:32 by znichola          #+#    #+#             */
+/*   Updated: 2022/10/10 11:33:33 by znichola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+
 
 #include "libft.h"
 

@@ -3,24 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: znichola <znichola@student.42lausanne.ch>  +#+  +:+       +#+        */
+/*   By: znichola <znichola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/26 14:16:40 by znichola          #+#    #+#             */
-/*   Updated: 2022/07/26 14:16:40 by znichola         ###   ########.fr       */
+/*   Created: 2022/10/10 11:33:03 by znichola          #+#    #+#             */
+/*   Updated: 2022/10/10 11:33:08 by znichola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# ifdef __unix__
-#  include <unistd.h>
-# endif
+// # ifdef __unix__
+// #  include <unistd.h>
+// # endif
 
-# ifdef _WIN32
-#  include <io.h>
-# endif
+// # ifdef _WIN32
+// #  include <io.h>
+// # endif
 
+# include <unistd.h>
 # include <string.h>
 # include <stdlib.h>
 # include <stdio.h>

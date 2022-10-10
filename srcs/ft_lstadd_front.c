@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: znichola <znichola@student.42lausanne.ch>  +#+  +:+       +#+        */
+/*   By: znichola <znichola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 18:13:20 by znichola          #+#    #+#             */
-/*   Updated: 2022/08/24 18:13:20 by znichola         ###   ########.fr       */
+/*   Updated: 2022/10/10 11:35:11 by znichola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
