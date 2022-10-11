@@ -6,7 +6,7 @@
 /*   By: znichola <znichola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 09:41:09 by znichola          #+#    #+#             */
-/*   Updated: 2022/10/10 14:56:06 by znichola         ###   ########.fr       */
+/*   Updated: 2022/10/11 15:36:30 by znichola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,16 +89,3 @@ char	**ft_split(char const *s, char c)
 	ret[i] = NULL;
 	return (ret);
 }
-
-// void main(int ac, char **av)
-// {
-// 	char *split = av[2];
-// 	int count = ft_countwords(split, *av[1]);
-// 	printf("word count is %d\n", count);
-// 	// char *word = ft_nextword(&split, *av[1]);
-// 	// printf("\nsplit<%s>\nword<%s>\n", split, word);
-// 	char **s = ft_split(av[2], *av[1]);
-// 	for (int i = 0; i < count; i++)
-// 		printf("new str<%s>\n", s[i]);
-// 	free(s);
-// }

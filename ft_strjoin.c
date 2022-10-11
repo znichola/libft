@@ -6,15 +6,9 @@
 /*   By: znichola <znichola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 09:39:29 by znichola          #+#    #+#             */
-/*   Updated: 2022/10/10 11:35:11 by znichola         ###   ########.fr       */
+/*   Updated: 2022/10/11 15:39:27 by znichola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-/*
- * Allocates (with malloc(3)) and returns a new
- * string, which is the result of the concatenation
- * of ’s1’ and ’s2’.
- */
 
 #include "libft.h"
 

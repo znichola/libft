@@ -6,7 +6,7 @@
 /*   By: znichola <znichola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 19:15:58 by znichola          #+#    #+#             */
-/*   Updated: 2022/10/10 14:47:58 by znichola         ###   ########.fr       */
+/*   Updated: 2022/10/11 15:29:01 by znichola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,3 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	}
 	return (lstnew);
 }
-	// if (lst == NULL)
-	// 	return (NULL);

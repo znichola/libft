@@ -6,15 +6,9 @@
 /*   By: znichola <znichola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 09:40:27 by znichola          #+#    #+#             */
-/*   Updated: 2022/10/10 11:35:11 by znichola         ###   ########.fr       */
+/*   Updated: 2022/10/11 15:40:25 by znichola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-/*
- *Allocates (with malloc(3)) and returns a copy of
- * ’s1’ with the characters specified in ’set’ removed
- * from the beginning and the end of the string.
- */
 
 #include "libft.h"
 
