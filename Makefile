@@ -6,7 +6,7 @@
 #    By: znichola <znichola@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/24 09:03:40 by znichola          #+#    #+#              #
-#    Updated: 2022/11/17 13:27:36 by znichola         ###   ########.fr        #
+#    Updated: 2022/11/17 13:54:22 by znichola         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,11 +23,12 @@ PART_1	=	isalnum      lstmap       putstr_fd    strrchr      isalpha      \
 			calloc       lstlast      putnbr_fd    strnstr      tolower      \
 			isprint      memchr       striteri     toupper
 
+
+
 SRC_DIR	= srcs
 OBJ_DIR	= objs
 
 SRCS	=	$(addsuffix .c, $(addprefix $(SRC_DIR)/ft_, $(PART_1)))
-OBJS	=	$(SRCS:.c=.o)
 
 # special include directories
 INCLUDE = .
@@ -39,9 +40,18 @@ LIB		=	ar rs
 RM		=	rm -f
 
 # submodules
+# printf
 PRT_N	=	libftprintf.a
 PRT_DIR	=	printf
 PRINTF	=	$(PRT_DIR)/$(PRT_N)
+
+# get next line
+GNL_DIR	=	get_next_line
+GNL		=	get_next_line get_next_line_utils
+SRCS	+=	$(addsuffix .c, $(addprefix $(GNL_DIR)/, $(GNL)))
+
+# creat obj list
+OBJS	=	$(SRCS:.c=.o)
 
 # specify how to compile the .c files
 .c.o :
