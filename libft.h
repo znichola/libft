@@ -6,7 +6,7 @@
 /*   By: znichola <znichola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 11:33:03 by znichola          #+#    #+#             */
-/*   Updated: 2022/10/10 14:08:37 by znichola         ###   ########.fr       */
+/*   Updated: 2022/11/17 12:43:23 by znichola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@
 # include <string.h>
 # include <stdlib.h>
 # include <stdio.h>
+
+// submodules
+# include "printf/ft_printf.h"
 
 /** PART 1**/
 int		ft_atoi(const char *str);

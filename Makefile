@@ -6,39 +6,42 @@
 #    By: znichola <znichola@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/24 09:03:40 by znichola          #+#    #+#              #
-#    Updated: 2022/10/11 16:49:43 by znichola         ###   ########.fr        #
+#    Updated: 2022/11/17 13:27:36 by znichola         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # the name of the NAME program
-NAME	= libft.a
+NAME	=	libft.a
 
-PART_1	=	atoi         bzero        calloc       isalnum      isalpha      \
-			isascii      isdigit      isprint      memcmp       memchr       \
-			memcpy       memccpy      memmove      memset       strchr       \
-			strrchr      strdup       strlcat      strlcpy      strlen       \
-			strncmp      strnstr      tolower      toupper
-PART_2	=	substr       striteri     strjoin      strtrim      split        \
-			itoa         strmapi      putchar_fd   putstr_fd    putendl_fd   \
-			putnbr_fd
-BONUS	=	lstnew       lstadd_front lstsize      lstlast      lstadd_back  \
-			lstdelone    lstclear     lstiter      lstmap
+PART_1	=	isalnum      lstmap       putstr_fd    strrchr      isalpha      \
+			itoa         memcmp       strjoin      lstadd_back  lstclear     \
+			memset       strlen       atoi         lstdelone    lstnew       \
+			split        strtrim      isascii      lstsize      memcpy       \
+			strlcat      lstadd_front memmove      putchar_fd   strmapi      \
+			bzero        lstiter      putendl_fd   strchr       substr       \
+			isdigit      memccpy      strdup       strlcpy      strncmp      \
+			calloc       lstlast      putnbr_fd    strnstr      tolower      \
+			isprint      memchr       striteri     toupper
 
-SRC		+=	$(addsuffix .c, $(addprefix ft_, $(PART_1)))
-SRC		+=	$(addsuffix .c, $(addprefix ft_, $(PART_2)))
-OBJ		=	$(SRC:.c=.o)
+SRC_DIR	= srcs
+OBJ_DIR	= objs
 
-SRCB	=	$(addsuffix .c, $(addprefix ft_, $(BONUS)))
-OBJB	=	$(SRCB:.c=.o)
+SRCS	=	$(addsuffix .c, $(addprefix $(SRC_DIR)/ft_, $(PART_1)))
+OBJS	=	$(SRCS:.c=.o)
 
 # special include directories
 INCLUDE = .
 
 # select the compiler and flags
-CC		= gcc
-CFLAGS	= -Wall -Wextra -Werror
-LIB		= ar rs
-RM		= rm -f
+CC		=	gcc
+CFLAGS	=	-Wall -Wextra -Werror
+LIB		=	ar rs
+RM		=	rm -f
+
+# submodules
+PRT_N	=	libftprintf.a
+PRT_DIR	=	printf
+PRINTF	=	$(PRT_DIR)/$(PRT_N)
 
 # specify how to compile the .c files
 .c.o :
@@ -48,23 +51,24 @@ RM		= rm -f
 all : $(NAME)
 
 # specify how to compile the NAME
-$(NAME): $(OBJ)
-		${LIB} ${@} ${OBJ}
-
-# libft.a : $(NAME)
-
-bonus : $(OBJ) $(OBJB)
-		${LIB} ${NAME} $(OBJ) ${OBJB}
+$(NAME): $(PRINTF) $(OBJS)
+		${LIB} ${@} ${OBJS}
 
 # remove binaries
 clean :
-		${RM} $(OBJ)
-		${RM} $(OBJB)
+		${RM} $(OBJS)
+		$(MAKE) -C $(PRT_DIR) clean
 
-# # remove binaries and other junk
+# remove binaries and other junk
 fclean : clean
 		${RM} ${NAME}
+		$(MAKE) -C $(PRT_DIR) fclean
 
 re : fclean all
+
+# submodules
+$(PRINTF):
+		$(MAKE) -C $(PRT_DIR) $(PRT_N)
+		cp $(PRINTF) $(NAME)
 
 .PHONY: $(NAME) all re clean fclean bonus
