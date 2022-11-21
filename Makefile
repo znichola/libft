@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: znichola <znichola@student.42.fr>          +#+  +:+       +#+         #
+#    By: znichola <znichola@student.42lausanne.c    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/24 09:03:40 by znichola          #+#    #+#              #
-#    Updated: 2022/11/17 13:54:22 by znichola         ###   ########.fr        #
+#    Updated: 2022/11/21 15:59:42 by znichola         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -82,3 +82,17 @@ $(PRINTF):
 		cp $(PRINTF) $(NAME)
 
 .PHONY: $(NAME) all re clean fclean bonus
+
+# SUBMODULES tutorial
+# to add the lib as a submodule use
+# 	$ git submodule add git@github.com:znichola/libft.git libft
+# 
+# this stages the added submodule, so do a commit and push the change
+# 	$ git commit -m "libft addded as submodule to the project."
+# 	$ git push
+# 
+# the submoduel folders don't actually contain anything,update each with 
+# 	$ git submodule update --init <path_to module_folder>
+# or recursivly pull all submodules
+# 	$ git submodule update --init --recursive
+#  TODO: finish this once I've figured out how it all works
