@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: znichola <znichola@student.42.fr>          +#+  +:+       +#+         #
+#    By: znichola <znichola@student.42lausanne.ch>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/24 09:03:40 by znichola          #+#    #+#              #
-#    Updated: 2022/11/17 13:54:22 by znichola         ###   ########.fr        #
+#    Updated: 2022/12/02 16:39:50 by znichola         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,8 +22,6 @@ PART_1	=	isalnum      lstmap       putstr_fd    strrchr      isalpha      \
 			isdigit      memccpy      strdup       strlcpy      strncmp      \
 			calloc       lstlast      putnbr_fd    strnstr      tolower      \
 			isprint      memchr       striteri     toupper
-
-
 
 SRC_DIR	= srcs
 OBJ_DIR	= objs
@@ -81,4 +79,4 @@ $(PRINTF):
 		$(MAKE) -C $(PRT_DIR) $(PRT_N)
 		cp $(PRINTF) $(NAME)
 
-.PHONY: $(NAME) all re clean fclean bonus
+.PHONY: all re clean fclean bonus
