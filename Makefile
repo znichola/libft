@@ -6,7 +6,7 @@
 #    By: znichola <znichola@student.42lausanne.ch>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/24 09:03:40 by znichola          #+#    #+#              #
-#    Updated: 2023/01/11 15:33:28 by znichola         ###   ########.fr        #
+#    Updated: 2023/01/11 17:23:35 by znichola         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,13 +27,14 @@ EXTRA	=	isspace                 itoa_base_unsigned                       \
 			nbr_len                 putnbr_base_fd                           \
 			realloc                 split2                                   \
 			itoa_base               nbr_abs_len                              \
-			nbr_len_unsigned        putnbr_base_unsigned_fd                  \
+			nbr_len_unsigned        putnbr_base_unsigned_fd
 
 SRC_DIR	= srcs
 OBJ_DIR	= objs
 
-SRCS	=	$(addsuffix .c, $(addprefix $(SRC_DIR)/ft_, $(PART_1)))
+SRCS	:=	$(addsuffix .c, $(addprefix $(SRC_DIR)/ft_, $(PART_1)))
 SRCS	+=	$(addsuffix .c, $(addprefix extra/ft_, $(EXTRA)))
+# SRCS	+= " "
 
 # special include directories
 INCLUDE = .
@@ -41,7 +42,7 @@ INCLUDE = .
 # select the compiler and flags
 CC		=	gcc
 CFLAGS	=	-Wall -Wextra -Werror
-LIB		=	ar rcs
+LIB		=	ar rs
 RM		=	rm -f
 
 # submodules
@@ -55,6 +56,7 @@ GNL_DIR	=	get_next_line
 GNL		=	get_next_line get_next_line_utils
 SRCS	+=	$(addsuffix .c, $(addprefix $(GNL_DIR)/, $(GNL)))
 
+
 # creat obj list
 OBJS	=	$(SRCS:.c=.o)
 
@@ -66,7 +68,7 @@ OBJS	=	$(SRCS:.c=.o)
 all : $(NAME)
 
 # specify how to compile the NAME
-$(NAME): $(PRINTF) $(OBJS)
+$(NAME): do_printf $(OBJS)
 		${LIB} ${@} ${OBJS}
 
 # remove binaries
@@ -82,7 +84,7 @@ fclean : clean
 re : fclean all
 
 # submodules
-$(PRINTF):
+do_printf:
 		$(MAKE) -C $(PRT_DIR) $(PRT_N)
 		cp $(PRINTF) $(NAME)
 
