@@ -6,7 +6,7 @@
 #    By: znichola <znichola@student.42lausanne.ch>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/24 09:03:40 by znichola          #+#    #+#              #
-#    Updated: 2022/12/02 17:07:32 by znichola         ###   ########.fr        #
+#    Updated: 2023/01/11 15:33:28 by znichola         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,10 +23,17 @@ PART_1	=	isalnum      lstmap       putstr_fd    strrchr      isalpha      \
 			calloc       lstlast      putnbr_fd    strnstr      tolower      \
 			isprint      memchr       striteri     toupper
 
+EXTRA	=	isspace                 itoa_base_unsigned                       \
+			nbr_len                 putnbr_base_fd                           \
+			realloc                 split2                                   \
+			itoa_base               nbr_abs_len                              \
+			nbr_len_unsigned        putnbr_base_unsigned_fd                  \
+
 SRC_DIR	= srcs
 OBJ_DIR	= objs
 
 SRCS	=	$(addsuffix .c, $(addprefix $(SRC_DIR)/ft_, $(PART_1)))
+SRCS	+=	$(addsuffix .c, $(addprefix extra/ft_, $(EXTRA)))
 
 # special include directories
 INCLUDE = .
@@ -84,12 +91,12 @@ $(PRINTF):
 # SUBMODULES tutorial
 # to add the lib as a submodule use
 # 	$ git submodule add git@github.com:znichola/libft.git libft
-# 
+#
 # this stages the added submodule, so do a commit and push the change
 # 	$ git commit -m "libft addded as submodule to the project."
 # 	$ git push
-# 
-# the submoduel folders don't actually contain anything,update each with 
+#
+# the submoduel folders don't actually contain anything,update each with
 # 	$ git submodule update --init <path_to module_folder>
 # or recursivly pull all submodules
 # 	$ git submodule update --init --recursive
