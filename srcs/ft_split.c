@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: znichola <znichola@student.42.fr>          +#+  +:+       +#+        */
+/*   By: znichola <znichola@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 09:41:09 by znichola          #+#    #+#             */
-/*   Updated: 2022/10/11 15:36:30 by znichola         ###   ########.fr       */
+/*   Updated: 2023/01/23 22:43:45 by znichola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static char	*ft_nextword(char **str, char const c)
 	while (*end != c && *end != '\0')
 		end++;
 	len = end - *str + 1;
-	ret = (char *)malloc(sizeof(char) * len);
+	ret = (char *)ft_x_malloc(sizeof(char) * len);
 	if (!ret)
 		return (NULL);
 	end = ret;
@@ -73,7 +73,7 @@ char	**ft_split(char const *s, char c)
 	int		word_count;
 
 	word_count = ft_countwords(s, c);
-	ret = (char **)malloc(sizeof(char *) * (word_count + 1));
+	ret = (char **)ft_x_malloc(sizeof(char *) * (word_count + 1));
 	if (!ret)
 		return (NULL);
 	i = -1;

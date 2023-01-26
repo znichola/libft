@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: znichola <znichola@student.42.fr>          +#+  +:+       +#+        */
+/*   By: znichola <znichola@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 20:48:02 by znichola          #+#    #+#             */
-/*   Updated: 2022/10/11 15:39:17 by znichola         ###   ########.fr       */
+/*   Updated: 2023/01/23 22:43:49 by znichola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strdup(const char *s)
 	size_t	len;
 
 	len = ft_strlen(s) + 1;
-	ret = (char *)malloc(sizeof(char) * len);
+	ret = (char *)ft_x_malloc(sizeof(char) * len);
 	if (!ret)
 		return (NULL);
 	return ((char *)ft_memcpy(ret, s, len));

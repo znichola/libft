@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: znichola <znichola@student.42.fr>          +#+  +:+       +#+        */
+/*   By: znichola <znichola@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 18:06:53 by znichola          #+#    #+#             */
-/*   Updated: 2022/10/10 11:35:11 by znichola         ###   ########.fr       */
+/*   Updated: 2023/01/23 22:43:28 by znichola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_list	*ft_lstnew(void *content)
 {
 	t_list	*newlst;
 
-	newlst = (t_list *)malloc(sizeof(t_list));
+	newlst = (t_list *)ft_x_malloc(sizeof(t_list));
 	if (!newlst)
 		return (NULL);
 	newlst->content = content;

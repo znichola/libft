@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: znichola <znichola@student.42.fr>          +#+  +:+       +#+        */
+/*   By: znichola <znichola@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 09:42:17 by znichola          #+#    #+#             */
-/*   Updated: 2022/10/10 14:34:09 by znichola         ###   ########.fr       */
+/*   Updated: 2023/01/23 22:43:58 by znichola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char			*ret;
 	unsigned int	i;
 
-	ret = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
+	ret = (char *)ft_x_malloc(sizeof(char) * (ft_strlen(s) + 1));
 	if (!ret)
 		return (NULL);
 	i = 0;
