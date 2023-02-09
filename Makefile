@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: znichola <znichola@student.42lausanne.ch>  +#+  +:+       +#+         #
+#    By: skoulen <skoulen@student.42lausanne.ch>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/24 09:03:40 by znichola          #+#    #+#              #
-#    Updated: 2022/12/02 17:07:32 by znichola         ###   ########.fr        #
+#    Updated: 2023/02/09 18:18:49 by skoulen          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,7 +53,7 @@ OBJS	=	$(SRCS:.c=.o)
 
 # specify how to compile the .c files
 .c.o :
-		$(CC) $(CFLAGS) -I${INCLUDE} -c $< -o $(@)
+		$(CC) $(CFLAGS) -I${INCLUDE} -c -DBUFFER_SIZE=1 $< -o $(@)
 
 # if you type 'make' without arguments, this is the default
 all : $(NAME)
@@ -84,12 +84,12 @@ $(PRINTF):
 # SUBMODULES tutorial
 # to add the lib as a submodule use
 # 	$ git submodule add git@github.com:znichola/libft.git libft
-# 
+#
 # this stages the added submodule, so do a commit and push the change
 # 	$ git commit -m "libft addded as submodule to the project."
 # 	$ git push
-# 
-# the submoduel folders don't actually contain anything,update each with 
+#
+# the submoduel folders don't actually contain anything,update each with
 # 	$ git submodule update --init <path_to module_folder>
 # or recursivly pull all submodules
 # 	$ git submodule update --init --recursive
